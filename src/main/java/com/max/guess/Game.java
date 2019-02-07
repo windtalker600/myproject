@@ -13,7 +13,13 @@ public class Game {
         while (number != secret) {
             System.out.println("Enter a nember: ");
             number = scanner.nextInt();
-            System.out.println(number);
+            if (number < secret){
+                System.out.println("Guess higher");
+            } else if (number > secret){
+                System.out.println("guess lower");
+            } else {
+                System.out.println("Great! the number is "+ number);
+            }
         }
        /* int i=0;
         do {
