@@ -21,8 +21,8 @@ class StudentTest {
 //回頭再來找問題點
     @Test
     fun gradingTest() {
-        val stud = Student("Hank", 60, 80)
-        Assertions.assertEquals('C', stud.grading())
+        val student = Student("Hank", 60, 80)
+        Assertions.assertEquals('C', student.grading())
     }
 }
 

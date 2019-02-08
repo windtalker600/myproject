@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
     println("Highest score: " + stu.highest())
     }
 
-class Student(var name:String?, var english:Int, var math:Int){
+class Student(var name:String? , var english:Int, var math:Int){
     fun print(){
         println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
         /*print(name +"\t"+english +"\t" +math+"\t"+getAverage() + "\t" + passOrFailed())
