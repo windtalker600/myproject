@@ -4,6 +4,7 @@ public class Person {
     String name;
     float weight;
     float height;//屬性 property
+
     public Person(float weight, float height){
     this.weight = weight;
     this.height = height;
