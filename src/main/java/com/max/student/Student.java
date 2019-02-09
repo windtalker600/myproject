@@ -5,6 +5,7 @@ public class Student {
     String name;
     int english; //initial value=0;
     int math;
+    static int pass = 60;
     public Student(){
         super();
     }
@@ -16,6 +17,7 @@ public class Student {
     }
 
     public int highest(){
+
 //        int max = (english > math) ? english : math;
 //        if (english > math){
 //            max=english;
@@ -29,7 +31,7 @@ public class Student {
     public void print(){
         int average = getAverage();
         System.out.print(name + "\t" + english +"\t" + math +
-                "\t" + getAverage()+ "\t" + ((getAverage()>=60) ? "PASS" : "Failed"));
+                "\t" + getAverage()+ "\t" + ((getAverage()>=pass) ? "PASS" : "Failed"));
         char grading = 'F';
         switch (average/10){ //小數點後會去除
             case 10:

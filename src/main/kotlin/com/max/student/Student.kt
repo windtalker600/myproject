@@ -4,21 +4,35 @@ import java.util.*
 
 fun main(args: Array<String>) {
 //    userInout()
-    val stu = Student("Jack_KT", 60, 99)
+    StudentKT.pass = 50
+    val stu = StudentKT("Jack_KT", 60, 99)
+    val stu1 = StudentKT("Jane_KT", 45, 68)
+    val stu2 = StudentKT("Jamie_K", 30, 52)
+
     stu.print();
+    stu1.print();
+    stu2.print();
     val test =123
     println("There is : $test")
     println("Highest score: ${stu.highest()}" )
     println("Highest score: " + stu.highest())
     }
 
-class Student(var name:String? , var english:Int, var math:Int){
+class StudentKT(var name:String? , var english:Int, var math:Int){
+    companion object {
+        var pass = 60
+        fun test(){
+            println("testing")
+        }
+    }
+
+
     fun print(){
         println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
         /*print(name +"\t"+english +"\t" +math+"\t"+getAverage() + "\t" + passOrFailed())
         println("\t" + grading())*/
     }
-    fun passOrFailed() = if(getAverage()>=60) "PASS" else "failed"
+    fun passOrFailed() = if(getAverage()>= pass) "PASS" else "failed"
     fun grading() = when(getAverage()) {
             in 90..100 -> 'A'
             in 80..89 -> 'B'
@@ -57,7 +71,7 @@ private fun userInput() {
     print("Enter math's score=")
     var math = scanner.nextInt()
 
-    val stu = Student(name, english, math)
+    val stu = StudentKT(name, english, math)
     stu.print();
     stu.nameCheck();
 }

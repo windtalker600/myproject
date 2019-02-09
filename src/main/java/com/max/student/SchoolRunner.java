@@ -5,9 +5,19 @@ import java.util.Scanner; //會自動加上 import語法
 public class SchoolRunner {
     public static void main(String[] args) {
 //        userInput();
+
+
+        Student.pass = 50;
         Student stu = new Student("Hank", 7, 99);
+        Student stu2 = new Student("Eric",60,40);
+        Student stu3 = new Student("Jane",50,40);
+        GraduateStudent gstu = new GraduateStudent("Jack",55,65,60);
+        gstu.print();
         stu.print();
-        System.out.println("Highest score: " + stu.highest());
+        stu2.print();
+        stu3.print();
+        System.out.println("High score: " + stu.highest());
+
     }
 
     private static void userInput() {
