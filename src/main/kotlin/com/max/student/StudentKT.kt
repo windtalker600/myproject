@@ -1,4 +1,4 @@
-package com.max.student
+package com.max.studentKT
 
 import java.util.*
 
