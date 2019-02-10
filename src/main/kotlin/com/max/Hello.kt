@@ -1,6 +1,11 @@
 package com.max
 
+import com.max.studentKT.StudentKT
+
 fun main(args: Array<String>) {
+
+    val stu = StudentKT("Hank",80,80)
+    stu.grading()
     var s:String? = "abcdef" //除非string定義有個?號
     s = null //Kotlin內定為不可為null
     println(s!!.length) //需要出現Exception

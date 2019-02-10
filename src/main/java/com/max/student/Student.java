@@ -14,7 +14,7 @@ public class Student {
         this.name = name;
         this.english = english;
         this.math = math;
-    }
+    } //這是個建構子
 
     public int highest(){
 
@@ -26,9 +26,10 @@ public class Student {
 //        }
        return (english > math) ? english : math;
 //        return max;
-    }
+    } //這是個方法
 
     public void print(){
+
         int average = getAverage();
         System.out.print(name + "\t" + english +"\t" + math +
                 "\t" + getAverage()+ "\t" + ((getAverage()>=pass) ? "PASS" : "Failed"));

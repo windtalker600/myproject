@@ -8,7 +8,8 @@ fun main(args: Array<String>) {
     val stu = StudentKT("Jack_KT", 60, 99)
     val stu1 = StudentKT("Jane_KT", 45, 68)
     val stu2 = StudentKT("Jamie_K", 30, 52)
-
+    val gstu = GraduateStudentKT("Kimmer",55,65,60)
+    gstu.print();
     stu.print();
     stu1.print();
     stu2.print();
@@ -18,22 +19,38 @@ fun main(args: Array<String>) {
     println("Highest score: " + stu.highest())
     }
 
-class StudentKT(var name:String? , var english:Int, var math:Int){
+class GraduateStudentKT(name: String?,english: Int,math: Int, var thesis: Int) : StudentKT(name, english, math){
+    companion object {
+        var pass = 70
+    }
+
+    override fun print() {
+
+        println("$name\t$english\t$math\t$thesis\t${getAverage()}\t${passOrFailed()}\t${grading()}")
+    }
+
+    override  fun passOrFailed() = if(getAverage()>= pass) "PASS" else "failed"
+    }
+
+
+open class StudentKT(var name:String?, var english:Int, var math:Int){
     companion object {
         var pass = 60
         fun test(){
             println("testing")
         }
+
     }
 
 
-    fun print(){
+open    fun print(){
+
         println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
         /*print(name +"\t"+english +"\t" +math+"\t"+getAverage() + "\t" + passOrFailed())
         println("\t" + grading())*/
     }
-    fun passOrFailed() = if(getAverage()>= pass) "PASS" else "failed"
-    fun grading() = when(getAverage()) {
+open    fun passOrFailed() = if(getAverage()>= pass) "PASS" else "failed"
+internal    fun grading() = when(getAverage()) {
             in 90..100 -> 'A'
             in 80..89 -> 'B'
             in 70..79 -> 'C'

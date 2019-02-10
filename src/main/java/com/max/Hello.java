@@ -1,8 +1,14 @@
 package com.max;
 
+//import com.max.student.Student;
+
+import com.max.studentKT.StudentKT;
+
 public class Hello {
     public static void main(String[] args) {
-       System.out.println("Hello JAVA world");
+        StudentKT stu = new StudentKT("Hank",60,70);
+
+        System.out.println("Hello JAVA world");
        String s = new String("abcdef");
 //        String s = null;
         System.out.println(s.charAt(3));
