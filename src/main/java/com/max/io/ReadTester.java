@@ -2,9 +2,20 @@ package com.max.io;
 
 import java.io.*;
 
-public class Tester {
+public class ReadTester {
     public static void main(String[] args) {
-       /BufferedReader br = new BufferedReader();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+            String line = br.readLine();
+            while(line!= null){
+                System.out.println(line);
+                line = br.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(); //專案開發時不要拿掉, 開發完成後,是換成我們的log
+        } catch (IOException e) {
+            e.printStackTrace();  //專案開發時catch不要拿掉, 開發完成後,是換成我們的log
+        }
 
 
         //filereader();
